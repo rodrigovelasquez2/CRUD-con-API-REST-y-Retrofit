@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.velasquez.crud_con_api_rest_y_retrofit.interfaces.CRUD_interfaces;
 import com.velasquez.crud_con_api_rest_y_retrofit.models.Product;
+import com.velasquez.crud_con_api_rest_y_retrofit.utils.Constant;
 
 import java.util.List;
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getAll() {
         Retrofit retoRetrofit = new Retrofit.Builder()
-                .baseUrl("https://localhost:8080//")
+                .baseUrl(Constant.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         crudInterfaces = retoRetrofit.create(CRUD_interfaces.class);
