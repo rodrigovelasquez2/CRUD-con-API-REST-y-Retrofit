@@ -33,6 +33,12 @@ android {
 
 dependencies {
 
+    //implementation de Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+
+    //gson:
+    implementation ("com.squareup.retrofit2:converter-gson: 2.11.0")
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
