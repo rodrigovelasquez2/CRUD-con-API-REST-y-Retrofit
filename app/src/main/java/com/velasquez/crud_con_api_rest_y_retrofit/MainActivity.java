@@ -8,7 +8,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.velasquez.crud_con_api_rest_y_retrofit.models.Product;
+
+import java.util.List;
+
+import retrofit2.Retrofit;
+
 public class MainActivity extends AppCompatActivity {
+    List<Product> productos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +27,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
+    }//Fin onCreate
+
+    private void getAll(){
+        Retrofit retoRetrofit = new Retrofit.Builder()
+                .baseUrl("https://localhost:8080//")
+                .addConverterFactory(GsonCrea.create())
+                .build();
+    }//Fin getAll
 }
